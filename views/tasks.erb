@@ -1,0 +1,14 @@
+<a href="/tasks/new">Create a New Task</a>
+<% if @tasks.any? %>
+	<ul id="tasks">
+		<% @tasks.each do |t| %>
+			<li><a href="/tasks/<%=t.id%>"><%= t.name %></a></li>
+			<ul>
+				<li><%= t.details %></li>
+				<li><%= t.date.strftime('%B %e, %Y') if t.date %></li>
+			</ul>
+		<% end %>
+	</ul>
+<% else %>
+	<p>No songs have been created yet!</p>
+<% end %>

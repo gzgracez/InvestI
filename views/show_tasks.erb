@@ -1,0 +1,9 @@
+<p><%= @tasks.details %></p>
+<p><%= @tasks.date.strftime('%B %e, %Y') if @tasks.date %></p>
+<form method="post" action="/tasks/<%= @tasks.id %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete This Task">
+</form>
+<p><a href="/tasks/<%= @tasks.id %>/edit" class="href">Edit Task</a></p>
+<p><a href="/tasks" class="href">All Tasks</a></p>
+<p><a href="/tasks/new" class="href">Create a Task</a></p>

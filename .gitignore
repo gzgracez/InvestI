@@ -1,0 +1,6 @@
+.sass-cache
+*.css.map
+.DS_STORE
+.bundle
+file.txt
+file.rb
