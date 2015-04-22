@@ -16,7 +16,7 @@ end
 
 get '/api' do
   @title="api"
-  uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.csv?auth_token=#@key")
+  uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.csv?auth_token=ENV['key']")
 
   # Shortcut
   response = Net::HTTP.get_response(uri)
