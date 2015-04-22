@@ -19,6 +19,7 @@ end
 
 get '/api' do
   @title="api"
+  $key=ENV['key']
   uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.csv?auth_token=#$key")
 
   # Shortcut
