@@ -25,7 +25,8 @@ get '/api' do
   response = Net::HTTP.get_response(uri)
 
   # Will print response.body
-  Net::HTTP.get_print(uri)
+  #Net::HTTP.get_print(uri)
+  response.body
 
   # Full
   # http = Net::HTTP.new(uri.host, uri.port)
@@ -37,19 +38,19 @@ end
 
 
 get '/' do
-  @title = "testSinatra's Home Page!"
+  @title = "InvestI's Home Page!"
   erb :home
 end
 
 get '/test' do
-  @title="testSinatra's Test Page"
+  @title="InvestI's Test Page"
   test="test"
   "Hello #{test}"
   erb :test
 end
 
 get '/reload' do
-  @title="testSinatra's Reload Page"
+  @title="InvestI's Reload Page"
   test="reload"
   "Hello #{test}"
   erb :reload
