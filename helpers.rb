@@ -9,3 +9,4 @@ require 'uri'
 
 require 'dm-core'
 require 'dm-migrations'
+require './env'
