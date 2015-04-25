@@ -1,7 +1,6 @@
 require 'sinatra'
 require './helpers'
 require './tasks'
-require './env'
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
 
@@ -13,18 +12,18 @@ configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
-@key=ENV['key']
-
 get '/api' do
   @title="api"
-  uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=#@key")
+  uri = URI.parse("https://www.quandl.com/api/v1/datasets/OPEC/ORB.json")
 
   # Shortcut
   response = Net::HTTP.get_response(uri)
 
   # Will print response.body
   #Net::HTTP.get_print(uri)
+  #json = response.to_json
   response.body
+  # json
   
   # Full
   # http = Net::HTTP.new(uri.host, uri.port)
