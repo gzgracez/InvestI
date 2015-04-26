@@ -21,10 +21,10 @@ get '/api' do
 
   # Will print response.body
   #Net::HTTP.get_print(uri)
-  #json = response.to_json
-  response.body
-  # json
-  
+   responseBody = response.body
+   parsed=JSON.parse(responseBody)
+  # response.body
+   parsed["source_name"]
   # Full
   # http = Net::HTTP.new(uri.host, uri.port)
   # response = http.request(Net::HTTP::Get.new(uri.request_uri))
