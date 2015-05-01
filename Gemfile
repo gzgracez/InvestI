@@ -6,6 +6,7 @@ gem "dm-core"
 gem "dm-migrations"
 gem "thin"
 gem "sinatra-flash"
+gem "rest-client"
 gem "pg", :group => :production
 gem "dm-postgres-adapter", :group => :production
 gem "dm-sqlite-adapter", :group => :development

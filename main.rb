@@ -30,9 +30,11 @@ get '/api' do
   # response = http.request(Net::HTTP::Get.new(uri.request_uri))
 end
 
-
-
-
+get '/tryapi' do #uses rest-client
+  api_result=RestClient.get'https://www.quandl.com/api/v1/datasets/OPEC/ORB.json'
+  resultHash=JSON.parse(api_result)
+  api_result
+end
 
 get '/' do
   @title = "InvestI's Home Page!"
