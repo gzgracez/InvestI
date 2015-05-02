@@ -3,7 +3,12 @@
 	<label for="details">Details:</label>
 	<span><textarea name="stocks[details]" placeholder="Details" ><%=@stocks.details%></textarea></span><br>
 	<label for="details">Date (mm/dd/yyyy):</label>
-	<input type="text" name="stocks[date]" value="<%=@stocks.date.strftime("%m/%d/%Y") if @stocks.date%>" placeholder="Date"><br>
+	<input type="text" name="stocks[date]" 
+		<% if @stocks.date %>
+			value="<%=@stocks.date.strftime("%m/%d/%Y")%>"  
+		<% else %>
+			value="<%=Date.today.strftime("%m/%d/%Y")%>"
+		<% end %>
+		placeholder="Date"><br>
 	<input type="submit" value="Submit">
 </form>
-<!--  value="<%=Date.today%>" -->
