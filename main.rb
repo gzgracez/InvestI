@@ -1,6 +1,7 @@
 require 'sinatra'
 require './helpers'
 require './tasks'
+require './env'
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
 
@@ -13,8 +14,9 @@ configure :production do
 end
 
 get '/api' do
+  @key=ENV['key']
   @title="api"
-  uri = URI.parse("https://www.quandl.com/api/v1/datasets/OPEC/ORB.json")
+  uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?auth_token=#@key")
 
   # Shortcut
   response = Net::HTTP.get_response(uri)
@@ -24,16 +26,10 @@ get '/api' do
    responseBody = response.body
    parsed=JSON.parse(responseBody)
   # response.body
-   parsed["source_name"]
+   parsed["premium"].to_s
   # Full
   # http = Net::HTTP.new(uri.host, uri.port)
   # response = http.request(Net::HTTP::Get.new(uri.request_uri))
-end
-
-get '/tryapi' do #uses rest-client
-  api_result=RestClient.get'https://www.quandl.com/api/v1/datasets/OPEC/ORB.json'
-  resultHash=JSON.parse(api_result)
-  api_result
 end
 
 get '/' do
