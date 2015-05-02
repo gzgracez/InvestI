@@ -51,7 +51,7 @@ form{
 	  	font-weight: bold;
 	  }
 		a {
-		  padding: 0px 2vw;
+		  padding: 0px 0vw;//0px 2vw;
 		  text-decoration: none;
   	  text-align: center;
 		  &:hover{
@@ -61,7 +61,7 @@ form{
 	}
 	.divider-vertical {
 		text-align: center;
-		margin: 0 2vw;
+		margin: 0 0vw;//0 2vw
 		border-right: .2vw solid #ccc;
 		border-left: .2vw solid #ccc;
 	}
