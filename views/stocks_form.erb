@@ -1,0 +1,8 @@
+	<label for="name">Stock Ticker:</label>
+	<input type="text" name="stocks[name]" value="<%=@stocks.name%>" placeholder="Todo Item" ><br>
+	<label for="details">Details:</label>
+	<span><textarea name="stocks[details]" placeholder="Details" ><%=@stocks.details%></textarea></span><br>
+	<label for="details">Date (mm/dd/yyyy):</label>
+	<input type="text" name="stocks[date]" value="<%=@stocks.date.strftime("%m/%d/%Y") if @stocks.date%>" placeholder="Date" ><br>
+	<input type="submit" value="Submit">
+</form>

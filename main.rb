@@ -1,6 +1,7 @@
 require 'sinatra'
 require './helpers'
 require './tasks'
+require './stocks'
 require './env'
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }

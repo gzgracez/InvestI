@@ -1,0 +1,9 @@
+<p><%= @stocks.details %></p>
+<p><%= @stocks.date.strftime('%B %e, %Y') if @stocks.date %></p>
+<form method="post" action="/stocks/<%= @stocks.id %>">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete This Task">
+</form>
+<p><a href="/stocks/<%= @stocks.id %>/edit" class="href">Edit Stock</a></p>
+<p><a href="/stocks" class="href">All Stocks</a></p>
+<p><a href="/stocks/new" class="href">Add a Stock</a></p>

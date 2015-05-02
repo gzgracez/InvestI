@@ -1,0 +1,14 @@
+<a href="/stocks/new">Add a New Stock</a>
+<% if @stocks.any? %>
+	<ul id="stocks">
+		<% @stocks.each do |t| %>
+			<li><a href="/stocks/<%=t.id%>"><%= t.name %></a></li>
+			<ul>
+				<li><%= t.details %></li>
+				<li><%= t.date.strftime('%B %e, %Y') if t.date %></li>
+			</ul>
+		<% end %>
+	</ul>
+<% else %>
+	<p>No stocks have been added yet!</p>
+<% end %>
