@@ -26,7 +26,8 @@ get '/api' do
    responseBody = response.body
    parsed=JSON.parse(responseBody)
   # response.body
-   JSON.pretty_generate(parsed["data"])
+  puts parsed["data"][0]
+  parsed["data"][0][3].to_s
   # Full
   # http = Net::HTTP.new(uri.host, uri.port)
   # response = http.request(Net::HTTP::Get.new(uri.request_uri))
