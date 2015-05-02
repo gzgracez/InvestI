@@ -2,6 +2,7 @@ require 'sinatra'
 require './helpers'
 require './tasks'
 require './stocks'
+require './env' if development?
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
 
