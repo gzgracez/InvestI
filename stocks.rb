@@ -41,33 +41,33 @@ get '/stocks/new' do
 end
 
 post '/stocks' do
-  flash[:notice] = "Task created successfully" if create_task
+  flash[:notice] = "Stock added successfully" if create_stock
   redirect to("/stocks/#{@stocks.id}")
 end
 
 get '/stocks/:id' do
-  @title = Stocks.get(params[:id]).ticker
+  @title = find_stock.ticker
   @stocks=find_stock
   erb :show_stocks
 end
 
 get '/stocks/:id/edit' do
-  @title = "Edit " + Stocks.get(params[:id]).ticker
-  @stocks=Stocks.get(params[:id])
-  erb :edit_task
+  @title = "Edit " + find_stock.ticker
+  @stocks=find_stock
+  erb :edit_stock
 end
 
 put '/stocks/:id' do
-  @title = "Update " + Stocks.get(params[:id]).ticker
-  stocks=find_task
+  @title = "Update " + find_stock.ticker
+  stocks=find_stock
   if stocks.update(params[:stocks])
-    flash[:notice] = "Task successfully updated"
+    flash[:notice] = "Stock successfully updated"
   end
   redirect to("/stocks/#{stocks.id}")
 end
 
 delete '/stocks/:id' do
-  @title = "Delete " + Stocks.get(params[:id]).ticker
-  find_task.destroy
+  @title = "Delete " + find_stock.ticker
+  find_stock.destroy
   redirect to("/stocks")
 end
