@@ -37,7 +37,7 @@ end
 get '/stocks/new' do
   @title="New Stock"
   @stocks = Stocks.new
-  erb :new_task
+  erb :new_stock
 end
 
 post '/stocks' do

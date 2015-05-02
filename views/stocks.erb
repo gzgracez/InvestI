@@ -2,7 +2,7 @@
 <% if @stocks.any? %>
 	<ul id="stocks">
 		<% @stocks.each do |t| %>
-			<li><a href="/stocks/<%=t.id%>"><%= t.name %></a></li>
+			<li><a href="/stocks/<%=t.id%>"><%= t.ticker %></a></li>
 			<ul>
 				<li><%= t.details %></li>
 				<li><%= t.date.strftime('%B %e, %Y') if t.date %></li>
