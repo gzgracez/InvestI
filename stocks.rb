@@ -46,19 +46,19 @@ post '/stocks' do
 end
 
 get '/stocks/:id' do
-  @title = Stocks.get(params[:id]).name
-  @stocks=find_task
+  @title = Stocks.get(params[:id]).ticker
+  @stocks=find_stock
   erb :show_stocks
 end
 
 get '/stocks/:id/edit' do
-  @title = "Edit " + Stocks.get(params[:id]).name
+  @title = "Edit " + Stocks.get(params[:id]).ticker
   @stocks=Stocks.get(params[:id])
   erb :edit_task
 end
 
 put '/stocks/:id' do
-  @title = "Update " + Stocks.get(params[:id]).name
+  @title = "Update " + Stocks.get(params[:id]).ticker
   stocks=find_task
   if stocks.update(params[:stocks])
     flash[:notice] = "Task successfully updated"
@@ -67,7 +67,7 @@ put '/stocks/:id' do
 end
 
 delete '/stocks/:id' do
-  @title = "Delete " + Stocks.get(params[:id]).name
+  @title = "Delete " + Stocks.get(params[:id]).ticker
   find_task.destroy
   redirect to("/stocks")
 end

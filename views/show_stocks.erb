@@ -1,4 +1,4 @@
-<p><%= @stocks.details %></p>
+<p><%= @stocks.details if @stocks.details %></p>
 <p><%= @stocks.date.strftime('%B %e, %Y') if @stocks.date %></p>
 <form method="post" action="/stocks/<%= @stocks.id %>">
 	<input type="hidden" name="_method" value="delete">
