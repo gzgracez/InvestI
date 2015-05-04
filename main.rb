@@ -6,6 +6,8 @@ require './env' if development?
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
 
+enable :sessions
+
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 end
