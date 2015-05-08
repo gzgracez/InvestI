@@ -30,25 +30,15 @@ end
 
 get '/api' do
   @key=ENV['key']
-  @title="api"
+  @title="Temp, API, APPL"
   uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?trim_start=2014-05-01&auth_token=#@key")
 
   # Shortcut
   response = Net::HTTP.get_response(uri)
-
-  # Will print response.body
-  #Net::HTTP.get_print(uri)
-   responseBody = response.body
-   parsed=JSON.parse(responseBody)
-  # response.body
-  #puts parsed["data"][0]
-  
-  parsed["data"][0][3].to_s
-  averageReturn(parsed).to_s
-  #averageReturn(parsed)
-  # Full
-  # http = Net::HTTP.new(uri.host, uri.port)
-  # response = http.request(Net::HTTP::Get.new(uri.request_uri))
+  responseBody = response.body
+  parsed=JSON.parse(responseBody)
+  @average=averageReturn(parsed).to_s
+  erb :api
 end
 
 get '/' do
