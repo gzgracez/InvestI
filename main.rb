@@ -23,6 +23,7 @@ helpers do
       total+=i[3].to_i
       #ticker["data"][0][3].to_s
     end
+    #puts total/ticker["data"].length
     return total/ticker["data"].length
   end
 end
@@ -43,6 +44,7 @@ get '/api' do
   #puts parsed["data"][0]
   
   parsed["data"][0][3].to_s
+  averageReturn(parsed).to_s
   #averageReturn(parsed)
   # Full
   # http = Net::HTTP.new(uri.host, uri.port)
