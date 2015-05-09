@@ -1,9 +1,9 @@
 $body-font: "Trebuchet MS", Helvetica, sans-serif;
 
 body {
-  padding: 5vw;
-  font-family: $body-font;
-  font-size: 4vw;
+	padding: 5vw;
+	font-family: $body-font;
+	font-size: 4vw;
 }
 
 h1{
@@ -11,10 +11,10 @@ h1{
 }
 
 a {
-  color: #006699;
-  &:hover{
-  	color: #00B7FF;
-  }
+	color: #006699;
+	&:hover{
+		color: #00B7FF;
+	}
 }
 
 ul {
@@ -33,27 +33,27 @@ form{
 }
 
 #navbar {
-  width: 100%;
-  float: left;
-  margin: 0 0 2vw 0;
-  padding: 0;
-  list-style: none;
-  background-color: #f2f2f2;
-  border-bottom: .2vw solid #ccc; 
-  border-top: .2vw solid #ccc; 
-  border-left: .2vw solid #ccc; 
-  border-right: .2vw solid #ccc; 
-  text-align: center;
+	width: 100%;
+	float: left;
+	margin: 0 0 2vw 0;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: .2vw solid #ccc; 
+	border-top: .2vw solid #ccc; 
+	border-left: .2vw solid #ccc; 
+	border-right: .2vw solid #ccc; 
+	text-align: center;
 	li {
 		display: inline-block;
-  	text-align: center;
-	  a.current{
-	  	font-weight: bold;
-	  }
+		text-align: center;
+		a.current{
+			font-weight: bold;
+		}
 		a {
 		  padding: 0px 0vw;//0px 2vw;
 		  text-decoration: none;
-  	  text-align: center;
+		  text-align: center;
 		  &:hover{
 		  	background-color: #fff; 
 		  }
@@ -67,11 +67,23 @@ form{
 	}
 }
 
+.header{
+	margin-top: 0;
+	padding-top: 0;
+	text-align: center;
+	background: url(/images/header1.svg) no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
 @media only screen and (max-device-width: 1024px) {
 	body {
-	  padding: 30px;
-	  font-family: $body-font;
-	  font-size: 35px;
+		padding: 30px;
+		font-family: $body-font;
+		font-size: 35px;
 	}
 	h1{
 		font-size: 40px;
@@ -85,16 +97,16 @@ form{
 		margin: 0 20px;
 	}
 	#navbar {
-	  font-size: 35px;
+		font-size: 35px;
 	}
 }
 
 
 @media only screen and (max-device-width: 860px) {
 	body {
-	  padding: 30px;
-	  font-family: $body-font;
-	  font-size: 25px;
+		padding: 30px;
+		font-family: $body-font;
+		font-size: 25px;
 	}
 	h1{
 		font-size: 30px;
@@ -108,15 +120,15 @@ form{
 		margin: 0 0;
 	}
 	#navbar {
-	  font-size: 25px;
+		font-size: 25px;
 	}
 }
 
 @media only screen and (max-device-width: 560px) {
 	body {
-	  padding: 30px;
-	  font-family: $body-font;
-	  font-size: 20px;
+		padding: 30px;
+		font-family: $body-font;
+		font-size: 20px;
 	}
 	h1{
 		font-size: 25px;
@@ -130,15 +142,15 @@ form{
 		margin: 0 0;
 	}
 	#navbar {
-	  font-size: 15px;
+		font-size: 15px;
 	}
 }
 
 @media only screen and (max-device-width: 480px) {
 	body {
-	  padding: 30px;
-	  font-family: $body-font;
-	  font-size: 20px;
+		padding: 30px;
+		font-family: $body-font;
+		font-size: 20px;
 	}
 	h1{
 		font-size: 20px;
@@ -152,15 +164,15 @@ form{
 		margin: 0 0;
 	}
 	#navbar {
-	  font-size: 15px;
+		font-size: 15px;
 	}
 }
 
 @media only screen and (max-device-width: 320px) {
 	body {
-	  padding: 30px;
-	  font-family: $body-font;
-	  font-size: 15px;
+		padding: 30px;
+		font-family: $body-font;
+		font-size: 15px;
 	}
 	h1{
 		font-size: 25px;
@@ -174,6 +186,6 @@ form{
 		margin: 0 0;
 	}
 	#navbar {
-	  font-size: 10px;
+		font-size: 10px;
 	}
 }
