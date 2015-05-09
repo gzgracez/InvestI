@@ -17,8 +17,8 @@ configure :production do
 end
 
 get '/api' do
-  @title="Temp, API, APPL"
-  tickerJSON=findTicker("APPL")
+  @title="Temp, API, AAPL"
+  tickerJSON=findTicker("AAPL")
   @average=averageReturn(tickerJSON)
   erb :api
 end

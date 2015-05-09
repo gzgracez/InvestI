@@ -17,7 +17,8 @@ helpers do
 	#Get data as JSON
 	def findTicker(ticker)
 		@key=ENV['key']
-		uri = URI.parse("https://www.quandl.com/api/v1/datasets/#{ticker}/AAPL.json?trim_start=2014-05-01&auth_token=#@key")
+
+		uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/#{ticker}.json?trim_start=2014-05-01&auth_token=#@key")
 		response = Net::HTTP.get_response(uri)
 		responseBody = response.body
 		parsed=JSON.parse(responseBody)
