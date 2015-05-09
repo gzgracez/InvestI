@@ -16,28 +16,10 @@ configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
-helpers do
-  def averageReturn(ticker)
-    total=0
-    for i in ticker["data"]
-      total+=i[3].to_f
-      #ticker["data"][0][3].to_s
-    end
-    #puts total/ticker["data"].length
-    return (total/ticker["data"].length).round(2)
-  end
-end
-
 get '/api' do
-  @key=ENV['key']
   @title="Temp, API, APPL"
-  uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/AAPL.json?trim_start=2014-05-01&auth_token=#@key")
-
-  # Shortcut
-  response = Net::HTTP.get_response(uri)
-  responseBody = response.body
-  parsed=JSON.parse(responseBody)
-  @average=averageReturn(parsed).to_s
+  tickerJSON=findTicker("APPL")
+  @average=averageReturn(tickerJSON)
   erb :api
 end
 
