@@ -20,11 +20,11 @@ helpers do
   def averageReturn(ticker)
     total=0
     for i in ticker["data"]
-      total+=i[3].to_i
+      total+=i[3].to_f
       #ticker["data"][0][3].to_s
     end
     #puts total/ticker["data"].length
-    return total/ticker["data"].length
+    return (total/ticker["data"].length).round(2)
   end
 end
 
