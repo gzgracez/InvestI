@@ -48,6 +48,8 @@ end
 get '/stocks/:id' do
   @title = find_stock.ticker
   @stocks=find_stock
+  tickerJSON=findTicker("#{find_stock.ticker}")
+  @average=averageReturn(tickerJSON)
   erb :show_stocks
 end
 

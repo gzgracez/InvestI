@@ -1,5 +1,6 @@
 <p><%= @stocks.details if @stocks.details %></p>
 <p><%= @stocks.date.strftime('%B %e, %Y') if @stocks.date %></p>
+<p><%= @average if @average %></p>
 <form method="post" action="/stocks/<%= @stocks.id %>">
 	<input type="hidden" name="_method" value="delete">
 	<input type="submit" value="Delete This Task">
