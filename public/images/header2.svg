@@ -14,7 +14,7 @@
    preserveAspectRatio="xMidYMid meet"
    id="svg2"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="header2.svg">
+   sodipodi:docname="header2.png">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -237,14 +237,24 @@ Created by potrace 1.12, written by Peter Selinger 2001-2015
      transform="matrix(0.1,0,0,-0.1,0,93.08001)"
      id="g6"
      style="fill:#000000;stroke:none" />
-  <path
-     style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#dcdd63;fill-opacity:1;stroke:none;stroke-width:16.14909363;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans"
-     d="m 270.51253,4.03105 -0.0236,0.0589 -6.9704,1.61308 -37.81914,38.38431 -16.20147,-5.65168 -1.38937,-0.48274 -1.34228,0.60049 -17.41423,7.7946 -34.48701,-30.02453 -2.50793,-2.17826 -2.46083,2.23713 L 100.99749,60.92463 79.54466,59.288 78.225936,59.18203 77.142697,59.93559 54.94809,75.33641 41.054383,71.68636 39.641464,71.30959 38.358062,71.9925 0.23278862,92.17369 l 0,1.23631 13.89370638,0 26.44514,-13.99968 14.140968,3.72069 1.66018,0.44743 1.401145,-0.98905 22.536064,-15.61276 21.711858,1.64841 1.60131,0.12952 1.18921,-1.09502 47.67425,-43.38839 33.757,29.41227 1.80147,1.55421 2.16648,-0.9655 18.23843,-8.17138 17.03745,5.94604 2.22535,0.7771 1.66018,-1.67195 39.89142,-40.50369 1.55421,-6.29927 -0.30613,-0.3179 z"
-     id="path9927"
-     inkscape:connector-curvature="0" />
-  <path
-     inkscape:connector-curvature="0"
-     style="fill:#dcdd63;fill-rule:evenodd;stroke:#dcdd63;stroke-width:3.04231548pt"
-     d="M 269.59025,3.56047 261.77764,32.93544 240.23636,11.45191 269.59025,3.56047 z"
-     id="path10615" />
+  <g
+     id="g3040"
+     transform="translate(0,-131.35999)">
+    <path
+       id="rect8049"
+       transform="scale(0.8,0.8)"
+       d="m 4.6875,168.53125 0,106.0625 27.40625,-14.125 19.09375,-9.8125 18.1875,5.125 14.40625,-9.625 15.78125,-10.5625 18.9375,1.5 9.375,0.78125 28.6875,-25.59375 35.21875,-31.3125 36.15625,30.1875 10.53125,8.78125 4.25,-1.90625 19.375,-8.65625 20.15625,6.75 2.0625,0.71875 48.65625,-48.3125 -328.28125,0 z"
+       style="fill:#000084;fill-opacity:1;stroke:#000084;stroke-width:7.83617878;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path9927"
+       d="m 270.51253,135.39104 -0.0236,0.0589 -6.9704,1.61308 -37.81914,38.38431 -16.20147,-5.65168 -1.38937,-0.48274 -1.34228,0.60049 -17.41423,7.7946 -34.48701,-30.02453 -2.50793,-2.17826 -2.46083,2.23713 -48.89878,44.54228 -21.45283,-1.63663 -1.318724,-0.10597 -1.083239,0.75356 -22.194607,15.40082 -13.893707,-3.65005 -1.412919,-0.37677 -1.283402,0.68291 -38.12527338,20.18119 0,1.23631 13.89370638,0 26.44514,-13.99968 14.140968,3.72069 1.66018,0.44743 1.401145,-0.98905 22.536064,-15.61276 21.711858,1.64841 1.60131,0.12952 1.18921,-1.09502 47.67425,-43.38839 33.757,29.41227 1.80147,1.55421 2.16648,-0.9655 18.23843,-8.17138 17.03745,5.94604 2.22535,0.7771 1.66018,-1.67195 39.89142,-40.50369 1.55421,-6.29927 -0.30613,-0.3179 z"
+       style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#dcdd63;fill-opacity:1;stroke:none;stroke-width:16.14909363;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+    <path
+       id="path10615"
+       d="m 269.59025,134.92046 -7.81261,29.37497 -21.54128,-21.48353 29.35389,-7.89144 z"
+       style="fill:#dcdd63;fill-rule:evenodd;stroke:#dcdd63;stroke-width:3.04231548pt"
+       inkscape:connector-curvature="0" />
+  </g>
 </svg>
