@@ -1,9 +1,12 @@
 $body-font: "Trebuchet MS", Helvetica, sans-serif;
 $navy: #000084;
 $yellow: #dcdd63;
+$gray: #F8F8F8;
 
 body, nav {
 	font-family: $body-font;
+	color: $navy;
+	background-color: $gray;
 }
 
 a {
@@ -35,4 +38,10 @@ form{
 	height: 100%;
 	top: 0;
 	left: 0;
+}
+
+.bodyText{
+	padding-top: 70px;
+	padding-left: 2vw;
+	padding-right: 2vw;
 }
