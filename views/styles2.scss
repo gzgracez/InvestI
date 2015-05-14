@@ -9,14 +9,14 @@ body, nav {
 	background-color: $gray;
 }
 
-body{
+body {
 	a {
 		text-decoration: underline;
 	}
 }
 
-nav{
-	a{
+nav {
+	a {
 		text-decoration: none;
 		color: $navy;
 	}
@@ -27,11 +27,15 @@ a {
 	&:hover{
 		color: #00B7FF;
 	}
+	.cNavbar{
+		color: $navy;
+	}
 	.navbar-brand{
 		color: $navy;
 	}
 	#navbar, .navbar-nav, .nav, .icon-bar, .navbar-default{
 		color: $navy;
+		background-color: $navy;
 	}
 }
 
