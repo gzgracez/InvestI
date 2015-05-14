@@ -1,7 +1,18 @@
 $body-font: "Trebuchet MS", Helvetica, sans-serif;
 $navy: #000084;
+$lighterNavy: #0000d3;
 $yellow: #dcdd63;
 $gray: #F8F8F8;
+
+html, body {
+    height: 100%;
+    width: 100%;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top:0;
+}
 
 body, nav {
 	font-family: $body-font;
@@ -23,7 +34,7 @@ nav {
 }
 
 a {
-	color: #006699;
+	color: $lighterNavy;
 	&:hover{
 		color: #00B7FF;
 	}
