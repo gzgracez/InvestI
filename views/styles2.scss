@@ -18,6 +18,7 @@ body{
 nav{
 	a{
 		text-decoration: none;
+		color: $navy;
 	}
 }
 
@@ -25,6 +26,12 @@ a {
 	color: #006699;
 	&:hover{
 		color: #00B7FF;
+	}
+	.navbar-brand{
+		color: $navy;
+	}
+	#navbar, .navbar-nav, .nav, .icon-bar, .navbar-default{
+		color: $navy;
 	}
 }
 
@@ -56,4 +63,8 @@ form{
 	padding-top: 70px;
 	padding-left: 2vw;
 	padding-right: 2vw;
+}
+
+.icon-bar{
+	background-color: $navy;
 }
