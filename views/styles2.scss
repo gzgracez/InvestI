@@ -9,6 +9,18 @@ body, nav {
 	background-color: $gray;
 }
 
+body{
+	a {
+		text-decoration: underline;
+	}
+}
+
+nav{
+	a{
+		text-decoration: none;
+	}
+}
+
 a {
 	color: #006699;
 	&:hover{
