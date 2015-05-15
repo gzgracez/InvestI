@@ -24,18 +24,18 @@
   </ul> -->
 
   <!DOCTYPE html>  
-<html lang="en">  
-<head>
-  <meta charset="utf-8">
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <title><%= @title || "testSinatra" %></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- <link href="/css/normalize.min.css" rel="stylesheet"> -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/styles2.css" rel="stylesheet" >
-  <link href="/favicon.ico" rel="icon" type="image/x-icon" />
-  <style>
+  <html lang="en">  
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title><%= @title || "testSinatra" %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link href="/css/normalize.min.css" rel="stylesheet"> -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles2.css" rel="stylesheet" >
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+    <style>
     html, body{
       width:100%;
       height:100%;
@@ -46,32 +46,33 @@
       top:0;
       /*background-color: #001282;*/
     }
-  </style>
-</head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#000084">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar" style="background-color:#dcdd63"></span>
-          <span class="icon-bar" style="background-color:#dcdd63"></span>
-          <span class="icon-bar" style="background-color:#dcdd63"></span>
-        </button>
-        <a class="navbar-brand" href="/" style="color:#dcdd63">InvestI</a>
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#000084">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar" style="background-color:#dcdd63"></span>
+            <span class="icon-bar" style="background-color:#dcdd63"></span>
+            <span class="icon-bar" style="background-color:#dcdd63"></span>
+          </button>
+          <a class="navbar-brand" href="/" style="color:#dcdd63">InvestI</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li<%=" class=\"active\"" if current?("/")%>><a href="/" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/")%>">Home</a></li>
+            <li<%=" class=\"active\"" if current?("/stocks")%>><a href="/stocks" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/stocks")%>">All Stocks</a></li>
+            <li<%=" class=\"active\"" if current?("/stocks/new")%>><a href="/stocks/new" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/stocks/new")%>">New Stock</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li<%=" class=\"active\"" if current?("/tasks")%>><a href="/tasks" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/tasks")%>">All Tasks</a></li>
+            <li<%=" class=\"active\"" if current?("/tasks/new")%>><a href="/tasks/new" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/tasks/new")%>">New Task</a></li>
+            <!-- <li<%=" class=\"active\"" if current?("/")%>><a href="#" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/")%>">Temp</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li<%=" class=\"active\"" if current?("/")%>><a href="/" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/")%>">Home</a></li>
-          <li<%=" class=\"active\"" if current?("/stocks")%>><a href="/stocks" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/stocks")%>">All Stocks</a></li>
-          <li<%=" class=\"active\"" if current?("/stocks/new")%>><a href="/stocks/new" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/stocks/new")%>">New Stock</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li<%=" class=\"active\"" if current?("/tasks")%>><a href="/tasks" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/tasks")%>">All Tasks</a></li>
-          <li<%=" class=\"active\"" if current?("/tasks/new")%>><a href="/tasks/new" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/tasks/new")%>">New Task</a></li>
-          <!-- <li<%=" class=\"active\"" if current?("/")%>><a href="#" class="cNavbar" style="color:#dcdd63<%="; background-color:#0000d3" if current?("/")%>">Temp</a></li> -->
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav>
-  <div class="bodyText">
+    </nav>
+    <div class="container">
+      <div class="bodyText">
