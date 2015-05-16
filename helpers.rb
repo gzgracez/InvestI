@@ -17,11 +17,11 @@ helpers do
 	#Get data as JSON
 	def findTicker(ticker)
 		@key=ENV['key']
-
-		uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/#{ticker}.json?trim_start=2014-05-01&auth_token=#@key")
+		uri = URI.parse("https://www.quandl.com/api/v1/datasets/WIKI/#{ticker}.json?trim_start=#{Date.today.year-1}-#{Date.today.month}-#{Date.today.day}&auth_token=#@key")
 		response = Net::HTTP.get_response(uri)
 		responseBody = response.body
 		parsed=JSON.parse(responseBody)
+		# puts "https://www.quandl.com/api/v1/datasets/WIKI/#{ticker}.json?trim_start=#{Date.today.year-1}-05-01&auth_token=#@key"
 		return parsed
 		#@average=averageReturn(parsed).to_s
 	end

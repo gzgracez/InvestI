@@ -19,7 +19,7 @@ end
 get '/api' do
   @title="Temp, API, AAPL"
   tickerJSON=findTicker("AAPL")
-  @average=averageReturn(tickerJSON)
+  # @average=averageReturn(tickerJSON)
   erb :api
 end
 
