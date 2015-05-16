@@ -3,6 +3,6 @@
 	<label for="details">Details:</label>
 	<span><textarea name="tasks[details]" placeholder="Details" ><%=@tasks.details%></textarea></span><br><p></p>
 	<label for="details">Date (mm/dd/yyyy):</label>
-	<input type="text" name="tasks[date]" value="<%=@tasks.date.strftime("%m/%d/%Y") if @tasks.date%>" placeholder="Date" ><br>
+	<input type="text" name="tasks[date]" value="<%=@tasks.date.strftime("%m/%d/%Y") if @tasks.date%>" placeholder="Date" ><br><br>
 	<input type="submit" value="Submit">
 </form>

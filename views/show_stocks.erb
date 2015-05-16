@@ -1,10 +1,36 @@
-<p><%= @stocks.details if @stocks.details %></p>
-<p><%= @stocks.date.strftime('%B %e, %Y') if @stocks.date %></p>
-<p><%= @average if @average %></p>
+<p>Details: <%= @stocks.details if @stocks.details %></p>
+<p>Date: <%= @stocks.date.strftime('%B %e, %Y') if @stocks.date %></p>
+<p>Average Return: <%= @average if @average %></p>
 <form method="post" action="/stocks/<%= @stocks.id %>">
 	<input type="hidden" name="_method" value="delete">
-	<input type="submit" value="Delete This Task">
+	<input type="submit" value="Delete This Stock">
 </form>
+<br>
 <p><a href="/stocks/<%= @stocks.id %>/edit" class="href">Edit Stock</a></p>
 <p><a href="/stocks" class="href">All Stocks</a></p>
 <p><a href="/stocks/new" class="href">Add a Stock</a></p>
+
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "autosize": true,
+  "symbol": "NASDAQ:<%= @stocks.ticker%>",
+  "interval": "D",
+  "timezone": "exchange",
+  "theme": "White",
+  "style": "2",
+  "toolbar_bg": "#f1f3f6",
+  "withdateranges": true,
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "news": [
+    "headlines"
+  ],
+  "hideideas": true,
+  "show_popup_button": true,
+  "popup_width": "1000",
+  "popup_height": "200"
+});
+</script>
+<br><br>
+

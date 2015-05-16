@@ -2,12 +2,10 @@
 <% if !current?("/") %>
 	<h1><%= @title || "InvestI" %></h1>
 <% end %>
-<div> 
 	<div class="notice">
 		<% if flash[:notice] %>
-			<%= flash[:notice] %>
+			<p class="notice"><%= flash[:notice] %></p>
 		<%end%>
 	</div>
 	<%= yield %>
-</div>
 <%= erb :footer%>

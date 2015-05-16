@@ -3,15 +3,16 @@ $navy: #000084;
 $lighterNavy: #0000d3;
 $yellow: #dcdd63;
 $gray: #F8F8F8;
+$green: #1f6300;
 
 html, body {
-    height: 100%;
-    width: 100%;
-      margin: 0;
-      padding: 0;
-      position: absolute;
-      left: 0;
-      top:0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top:0;
 }
 
 body, nav {
@@ -61,13 +62,18 @@ form{
 	}
 }
 
+.notice{
+	font-size: 16px;
+	color: $green;
+}
+
 .bodyText{
 	padding-top: 70px;
 	height: 100%;
 }
 
 .container {
-	// height: 100%;
+	height: 80%;
 }
 
 .icon-bar{
