@@ -1,7 +1,7 @@
 	<label for="ticker">Stock Ticker:</label>
-	<input type="text" name="stocks[ticker]" value="<%=@stocks.ticker%>" placeholder="Ticker" ><br>
+	<input type="text" name="stocks[ticker]" value="<%=@stocks.ticker%>" placeholder="Ticker" ><br><br>
 	<label for="details">Details:</label>
-	<span><textarea name="stocks[details]" placeholder="Details" ><%=@stocks.details%></textarea></span><br>
+	<span><textarea name="stocks[details]" placeholder="Details" ><%=@stocks.details%></textarea></span><br><p></p>
 	<label for="details">Date (mm/dd/yyyy):</label>
 	<input type="text" name="stocks[date]" 
 		<% if @stocks.date %>
