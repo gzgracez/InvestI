@@ -28,11 +28,6 @@ get '/' do
   erb :home
 end
 
-get '/home' do
-  @title = "InvestI's Home Page!"
-  erb :homeT, :layout => false
-end
-
 get '/test' do
   @title="InvestI's Test Page"
   test="test"

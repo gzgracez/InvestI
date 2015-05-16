@@ -1,34 +1,9 @@
-<!-- <!DOCTYPE html>  
-<html lang="en">  
-<head>
-  <meta charset="utf-8">
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <title><%= @title || "testSinatra" %></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="/css/normalize.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <link href="/favicon.ico" rel="icon" type="image/x-icon" />
-</head>
-<body>
-  <ul id="navbar">
-    <li><a href="/"<%=" class=\"current\"" if current?%> >Home</a></li>
-    <li class="divider-vertical"></li>
-    <li><a href="/stocks"<%=" class=\"current\"" if current?("/stocks")%>>All Stocks</a></li>
-    <li class="divider-vertical"></li>
-    <li><a href="/stocks/new"<%=" class=\"current\"" if current?("/stocks/new")%>>New Stock</a></li>
-    <li class="divider-vertical"></li>
-    <li><a href="/tasks"<%=" class=\"current\"" if current?("/tasks")%>>All Tasks</a></li>
-    <li class="divider-vertical"></li>
-    <li><a href="/tasks/new"<%=" class=\"current\"" if current?("/tasks/new")%>>New Task</a></li>
-  </ul> -->
-
   <!DOCTYPE html>  
   <html lang="en">  
   <head>
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title><%= @title || "testSinatra" %></title>
+    <title><%= @title || "InvestI" %></title>
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- <link href="/css/normalize.min.css" rel="stylesheet"> -->
@@ -74,5 +49,5 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <%="<div class=\"container\">" if !current?("/home")%>
+    <div class="container">
       <div class="bodyText">
