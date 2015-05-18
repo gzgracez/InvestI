@@ -2,6 +2,7 @@ require 'sinatra'
 require './helpers'
 require './tasks'
 require './stocks'
+require './login'
 require './env' if development?
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
@@ -25,6 +26,8 @@ end
 
 get '/' do
   @title = "InvestI's Home Page!"
+  @user
+  @login=false
   erb :home
 end
 

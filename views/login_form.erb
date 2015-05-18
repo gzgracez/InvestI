@@ -1,0 +1,8 @@
+	<label for="email">Email:</label>
+	<input type="text" name="logins[email]" value="<%=@logins.email.strftime("%m/%d/%Y") if @logins.email%>" placeholder="Email" ><br><br>
+	<label for="username">Username:</label>
+	<input type="text" name="logins[username]" value="<%=@logins.username%>" placeholder="Username" ><br><br>
+	<label for="password">Password:</label>
+	<input type="text" name="logins[password]" value="<%=@logins.password%>" placeholder="Password" ><br><br>
+	<input type="submit" value="Submit">
+</form>

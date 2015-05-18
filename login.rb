@@ -23,13 +23,13 @@ helpers LoginHelpers
 
 get '/login' do
   @title="Login"
-  #LOGIN FORM
+  erb :login
 end
 
-get '/login/new' do
-  @title="New Login"
+get '/login/register' do
+  @title="Register"
   @logins = Logins.new
-  erb :new_login
+  erb :login_register
 end
 
 post '/login' do
