@@ -3,6 +3,8 @@ require './helpers'
 class Logins
 	include DataMapper::Resource
 	property :id, Serial
+  property :firstName, String
+  property :lastName, String
 	property :username, String
 	property :password, String
 	property :email, String
@@ -32,13 +34,14 @@ get '/login/register' do
   erb :login_register
 end
 
-post '/login' do
+post '/login/register' do
   flash[:notice] = "Account created successfully" if create_login
   redirect to("/login/#{@logins.id}")
+  erb :show_logins
 end
 
 get '/login/:id' do
-  @title = Logins.get(params[:id]).name
+  @title = Logins.get(params[:id]).firstName.capitalize + " " + Logins.get(params[:id]).lastName.capitalize + "\'s Account!"
   @logins=find_login
   erb :show_logins
 end
