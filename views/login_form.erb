@@ -1,5 +1,5 @@
 	<label for="email">Email:</label>
-	<input type="text" name="logins[email]" value="<%=@logins.email.strftime("%m/%d/%Y") if @logins.email%>" placeholder="Email" ><br><br>
+	<input type="text" name="logins[email]" value="<%=@logins.email if @logins.email%>" placeholder="Email" ><br><br>
 
 	<label for="firstName">First Name:</label>
 	<input type="text" name="logins[firstName]" value="<%=@logins.firstName%>" placeholder="FirstName" ><br><br>
