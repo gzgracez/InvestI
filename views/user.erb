@@ -1,0 +1,6 @@
+<a href="/user/register">Register</a>
+<% if !@user %>
+	<a href="/user">Login</a>
+<% else %>
+	<a href="/logout">Logout</a>
+<% end %>
