@@ -7,4 +7,5 @@ class Session
     @firstName = firstName
     @lastName = lastName
     @email = email
+  end
 end
