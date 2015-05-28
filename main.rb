@@ -21,7 +21,6 @@ get '/api' do
   @title="Temp, API, AAPL"
   tickerJSON=findTicker("AAPL")
   # @average=averageReturn(tickerJSON)
-  # #commit
   erb :api
 end
 

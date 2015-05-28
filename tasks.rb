@@ -6,6 +6,7 @@ class Tasks
 	property :name, String
 	property :date, Date
 	property :details, String
+  property :user, Integer
 
 	def date=date
 	    super Date.strptime(date, '%m/%d/%Y')
