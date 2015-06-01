@@ -8,4 +8,8 @@ class Session
     @lastName = lastName
     @email = email
   end
+
+  def password_correct?(password, user)
+    
+  end
 end

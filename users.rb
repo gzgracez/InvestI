@@ -16,9 +16,9 @@ module LoginHelpers
   def find_user
     Users.get(params[:id])
   end
-  def create_user
-    @user = Users.create(params[:user])
-  end 
+  # def   
+  #   @user = Users.create(params[:user])
+  # end 
 end
 
 helpers LoginHelpers
@@ -30,13 +30,24 @@ end
 
 get '/user/register' do
   @title="Register"
-  @user = Users.new
+  @rUser = Users.create(params[:rUser])
   erb :user_register
+end
+
+get '/login' do
+  @title="Login"
+  erb :login
+end
+
+post '/login' do
+  @title="Login"
+  # @user=Users.find_user
+  erb :login
 end
 
 post '/user/register' do
   flash[:notice] = "Account created successfully" if create_user
-  redirect to("/user/#{@user.id}")
+  redirect to("/login")
   erb :show_user
 end
 
