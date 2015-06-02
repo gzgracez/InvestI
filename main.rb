@@ -26,12 +26,12 @@ end
 
 get '/' do
   @title = "InvestI's Home Page!"
-  @user
+  # @user
   # @login=false
   erb :home
 end
 
-get '/test' do
+get '/test/?' do
   @title="InvestI's Test Page"
   test="test"
   "Hello #{test}"

@@ -16,6 +16,10 @@ module LoginHelpers
   def find_user
     Users.get(params[:id])
   end
+  def setUserInfo(user)
+    @user.username = user[username]
+    @user.password = user[password]
+  end
   # def   
   #   @user = Users.create(params[:user])
   # end 
@@ -23,30 +27,38 @@ end
 
 helpers LoginHelpers
 
-get '/user' do
+get '/user/?' do
   @title="Login"
   erb :user
 end
 
 get '/user/register' do
-  @title="Register"
+  @title = "Register"
   @rUser = Users.create(params[:rUser])
   erb :user_register
 end
 
-get '/login' do
+get '/login/?' do
   @title="Login"
   erb :login
 end
 
 post '/login' do
   @title="Login"
-  # @user=Users.find_user
+  # Code like the following:
+  # user = @users_table.where(:name == params[:name]).first
+  # if user.nil? || not check_password(user, params[:password])
+
+  params.each do |k, v|
+    puts "Key: #{k}\nValue: #{v}"
+  end
   erb :login
 end
 
 post '/user/register' do
   flash[:notice] = "Account created successfully" if create_user
+  puts @rUser
+  puts @rUser.username
   redirect to("/login")
   erb :show_user
 end
