@@ -6,13 +6,10 @@ require './users'
 require './env' if development?
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
-# class Application < Sinatra::Application
     enable :sessions
 
     def initialize
-      # @users_table = DB[:users]
       @users_table = Users.all
-      # puts @users_table
     end
     
     # def initialize(app=nil)
@@ -38,7 +35,7 @@ require './env' if development?
 
     get '/' do
       @title = "InvestI's Home Page!"
-      puts @users_table
+      puts @users_table[0][:username]
       erb :home
     end
 
@@ -66,10 +63,3 @@ require './env' if development?
         (request.path==path || request.path==path+'/') ? "current" : nil
       end
     end
-# end
-
-
-#get '/:name' do
-#	name = params[:name]
-#	"Hi there #{name}!"
-#end
