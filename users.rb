@@ -20,9 +20,9 @@ module LoginHelpers
   #   @user.username = user[username]
   #   @user.password = user[password]
   # end
-  # def   
-  #   @user = Users.create(params[:user])
-  # end 
+  def create_user 
+    @rUser = Users.create(params[:rUser])
+  end 
 end
 
 helpers LoginHelpers
@@ -32,10 +32,18 @@ get '/user/?' do
   erb :user
 end
 
-get '/user/register' do
+get '/register/?' do
   @title = "Register"
   @rUser = Users.create(params[:rUser])
   erb :user_register
+end
+
+post '/register' do
+  flash[:notice] = "Account created successfully" if create_user
+  puts @rUser
+  puts @rUser.username
+  # redirect to("/login")
+  erb :show_user
 end
 
 get '/login/?' do
@@ -48,21 +56,16 @@ post '/login' do
   # Code like the following:
   # user = @users_table.where(:name == params[:name]).first
   # if user.nil? || not check_password(user, params[:password]) 
-  # user = @users_table.where(:name == params[:name]).first
+  user = @users_table.get(:username => params[:username])
+  if !user.nil?  
+    puts user[:username]
+  end
   # if user.nil? || not check_password(user, params[:password])
 
   # params.each do |k, v|
   #   puts "Key: #{k}\nValue: #{v}"
   # end
   erb :login
-end
-
-post '/user/register' do
-  flash[:notice] = "Account created successfully" if create_user
-  puts @rUser
-  puts @rUser.username
-  redirect to("/login")
-  erb :show_user
 end
 
 get '/user/:id' do

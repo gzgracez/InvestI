@@ -35,7 +35,7 @@ require './env' if development?
 
     get '/' do
       @title = "InvestI's Home Page!"
-      puts @users_table[0][:username]
+      # puts @users_table[0][:username]
       erb :home
     end
 
