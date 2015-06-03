@@ -16,10 +16,10 @@ module LoginHelpers
   def find_user
     Users.get(params[:id])
   end
-  def setUserInfo(user)
-    @user.username = user[username]
-    @user.password = user[password]
-  end
+  # def setUserInfo(user)
+  #   @user.username = user[username]
+  #   @user.password = user[password]
+  # end
   # def   
   #   @user = Users.create(params[:user])
   # end 
@@ -47,11 +47,13 @@ post '/login' do
   @title="Login"
   # Code like the following:
   # user = @users_table.where(:name == params[:name]).first
+  # if user.nil? || not check_password(user, params[:password]) 
+  # user = @users_table.where(:name == params[:name]).first
   # if user.nil? || not check_password(user, params[:password])
 
-  params.each do |k, v|
-    puts "Key: #{k}\nValue: #{v}"
-  end
+  # params.each do |k, v|
+  #   puts "Key: #{k}\nValue: #{v}"
+  # end
   erb :login
 end
 

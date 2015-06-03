@@ -9,6 +9,12 @@ require './env' if development?
 
 enable :sessions
 
+  def initialize
+    # @users_table = DB[:users]
+    @users_table = Users.all
+    puts @users_table
+  end
+
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 end
