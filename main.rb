@@ -30,11 +30,14 @@ get '/' do
   @title = "InvestI's Home Page!"
   @id = session[:id]
   user = findUserInDB(session[:id])
-  if user
+  if user 
+    puts "YES USER"
     @firstName = user[:firstName]
     @lastName = user[:lastName]
-    if user[:username] = admin
-      @admin = true 
+    puts @firstName
+    puts @lastName
+    if user[:username]=="admin"
+      @admin = true
     else 
       @admin = false
     end
@@ -43,19 +46,21 @@ get '/' do
 end
 
 post '/' do 
-  @usersTable = Users.all
-  @usersTable.each do |k|
-    puts k[:username]
-  end
   user = @usersTable.first(username: params[:username])
-  puts params[:username]
-  puts params[:password]
   if !user || !passwordsMatch?(user,params[:password])
     @error = "Email/Password is invalid"
     erb :home
   else
     session[:id] = user[:id]
-    puts user[:username]
+    @firstName = user[:firstName]
+    @lastName = user[:lastName]
+    # puts @firstName
+    # puts @lastName
+    if user[:username] = "admin"
+      @admin = true 
+    else 
+      @admin = false
+    end
     redirect '/'
   end
   erb :home

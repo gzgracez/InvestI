@@ -50,7 +50,7 @@ helpers do
   end
 
   def findUserInDB(id)
-    @usersTable.get(:id => id)
+  	@usersTable.first(id: id)
   end
 
   def create_user 
