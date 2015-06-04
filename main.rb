@@ -39,6 +39,14 @@ require './env' if development?
       erb :home
     end
 
+    post '/?' do 
+      user = @usersTable.get(:username => params[:username])
+      if !user.nil?  
+        puts user[:username]
+      end
+      erb :home
+    end
+
     get '/test/?' do
       @title="InvestI's Test Page"
       test="test"

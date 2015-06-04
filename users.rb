@@ -28,10 +28,7 @@ module LoginHelpers
   def findUserInDB(id)
     @usersTable.get(:id => id)
   end
-  # def setUserInfo(user)
-  #   @user.username = user[username]
-  #   @user.password = user[password]
-  # end
+
   def create_user 
     @rUser = Users.create(params[:rUser])
   end 
@@ -54,31 +51,31 @@ post '/register' do
   flash[:notice] = "Account created successfully" if create_user
   puts @rUser
   puts @rUser.username
-  redirect to("/login")
+  redirect to("/")
   erb :show_user
 end
 
-get '/login/?' do
-  @title="Login"
-  erb :login
-end
+# get '/login/?' do
+#   @title="Login"
+#   erb :login
+# end
 
-post '/login' do
-  @title="Login"
-  # Code like the following:
-  # user = @usersTable.where(:name == params[:name]).first
-  # if user.nil? || not check_password(user, params[:password]) 
-  user = @usersTable.get(:username => params[:username])
-  if !user.nil?  
-    puts user[:username]
-  end
-  # if user.nil? || not check_password(user, params[:password])
-
-  # params.each do |k, v|
-  #   puts "Key: #{k}\nValue: #{v}"
-  # end
-  erb :login
-end
+# post '/login' do
+#   @title="Login"
+#   # Code like the following:
+#   # user = @usersTable.where(:name == params[:name]).first
+#   # if user.nil? || not check_password(user, params[:password]) 
+#   user = @usersTable.get(:username => params[:username])
+#   if !user.nil?  
+#     puts user[:username]
+#   end
+#   # if user.nil? || not check_password(user, params[:password])
+#   
+#   # params.each do |k, v|
+#   #   puts "Key: #{k}\nValue: #{v}"
+#   # end
+#   erb :login
+# end
 
 get '/logout/?' do
   session.clear
