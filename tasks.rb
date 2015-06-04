@@ -29,13 +29,13 @@ end
 
 helpers TaskHelpers
 
-get '/tasks' do
+get '/tasks/?' do
   @title="All Tasks"
   find_tasks
   erb :tasks
 end
 
-get '/tasks/new' do
+get '/tasks/new/?' do
   @title="New Task"
   @tasks = Tasks.new
   erb :new_task
@@ -46,13 +46,13 @@ post '/tasks' do
   redirect to("/tasks/#{@tasks.id}")
 end
 
-get '/tasks/:id' do
+get '/tasks/:id/?' do
   @title = Tasks.get(params[:id]).name
   @tasks=find_task
   erb :show_tasks
 end
 
-get '/tasks/:id/edit' do
+get '/tasks/:id/edit/?' do
   @title = "Edit " + Tasks.get(params[:id]).name
   @tasks=Tasks.get(params[:id])
   erb :edit_task

@@ -34,4 +34,26 @@ helpers do
 		end
 		return (total/ticker["data"].length).round(2)
 	end
+
+
+	#for Users
+	def find_user
+    Users.get(params[:id])
+  end
+  
+  def passwordsMatch?(user, password)
+    if password == user[:password]
+      return true
+    else
+      return false
+    end
+  end
+
+  def findUserInDB(id)
+    @usersTable.get(:id => id)
+  end
+
+  def create_user 
+    @rUser = Users.create(params[:rUser])
+  end 
 end

@@ -4,6 +4,7 @@ $lighterNavy: #0000d3;
 $yellow: #dcdd63;
 $gray: #F8F8F8;
 $green: #1f6300;
+$red: red;
 
 html, body {
 	height: 100%;
@@ -69,6 +70,11 @@ form{
 .notice{
 	font-size: 16px;
 	color: $green;
+}
+
+.error{
+	font-size: 18px;
+	color: $red;
 }
 
 .bodyText{

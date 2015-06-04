@@ -49,8 +49,6 @@ end
 
 post '/register' do
   flash[:notice] = "Account created successfully" if create_user
-  puts @rUser
-  puts @rUser.username
   redirect to("/")
   erb :show_user
 end
@@ -80,6 +78,15 @@ end
 get '/logout/?' do
   session.clear
   redirect '/'
+end
+
+get '/users' do 
+  user = findUserInDB(session[:id])
+  if user && user[:username] = admin
+    erb :allUsers
+  else 
+    erb :notLoggedIn
+  end
 end
 
 get '/user/:id' do

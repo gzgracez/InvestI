@@ -28,13 +28,13 @@ end
 
 helpers StockHelpers
 
-get '/stocks' do
+get '/stocks/?' do
   @title="All Stocks"
   find_stocks
   erb :stocks
 end
 
-get '/stocks/new' do
+get '/stocks/new/?' do
   @title="New Stock"
   @stocks = Stocks.new
   erb :new_stock
@@ -45,7 +45,7 @@ post '/stocks' do
   redirect to("/stocks/#{@stocks.id}")
 end
 
-get '/stocks/:id' do
+get '/stocks/:id/?' do
   @title = find_stock.ticker
   @stocks=find_stock
   tickerJSON=findTicker("#{find_stock.ticker}")
@@ -53,7 +53,7 @@ get '/stocks/:id' do
   erb :show_stocks
 end
 
-get '/stocks/:id/edit' do
+get '/stocks/:id/edit/?' do
   @title = "Edit " + find_stock.ticker
   @stocks=find_stock
   erb :edit_stock
