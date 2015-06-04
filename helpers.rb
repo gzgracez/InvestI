@@ -29,10 +29,14 @@ helpers do
 	#Get average return
 	def averageReturn(ticker)
 		total=0
-		for i in ticker["data"]
-			total+=i[3].to_f
+		if ticker["data"]
+			for i in ticker["data"]
+				total+=i[3].to_f
+			end
+			return (total/ticker["data"].length).round(2)
+		else 
+			return "No information was found"
 		end
-		return (total/ticker["data"].length).round(2)
 	end
 
 

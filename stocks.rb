@@ -50,6 +50,9 @@ get '/stocks/:id/?' do
   @stocks=find_stock
   tickerJSON=findTicker("#{find_stock.ticker}")
   @average=averageReturn(tickerJSON)
+  if @average = nil
+    @average = "No information found"
+  end
   erb :show_stocks
 end
 

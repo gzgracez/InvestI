@@ -19,13 +19,20 @@ DataMapper.finalize
 
 get '/register/?' do
   @title = "Register"
-  @rUser = Users.create(params[:rUser])
+  @rUser = Users.new
   erb :user_register
 end
 
 post '/register' do
-  flash[:notice] = "Account created successfully" if create_user
-  redirect to("/")
+  if @usersTable.first(username: params[:username]).nil?
+    @rUser = Users.create(params[:rUser])
+    flash[:notice] = "Account created successfully"
+    redirect to("/")
+  else
+    flash[:error] = "Username already taken."
+    redirect to("/register")
+   # if create_user
+  end
   erb :show_user
 end
 
@@ -43,8 +50,8 @@ get '/users/?' do
   end
 end
 
-get '/user/:id' do
-  @title = Users.get(params[:id]).firstName.capitalize + " " + Users.get(params[:id]).lastName.capitalize + "\'s Account!"
-  @user = find_user
-  erb :show_user
-end
+# get '/user/:id' do
+#   @title = Users.get(params[:id]).firstName.capitalize + " " + Users.get(params[:id]).lastName.capitalize + "\'s Account!"
+#   @user = find_user
+#   erb :show_user
+# end

@@ -8,6 +8,9 @@
 		<% if flash[:notice] %>
 			<p class="notice"><%= flash[:notice] %></p>
 		<%end%>
+		<% else if flash[:error] %>
+			<p class="error"><%= flash[:error] %></p>
+		<%end%>
 	</div>
 	<%= yield %>
 <%= erb :footer%>
