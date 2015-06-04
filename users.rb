@@ -29,36 +29,14 @@ post '/register' do
   erb :show_user
 end
 
-# get '/login/?' do
-#   @title="Login"
-#   erb :login
-# end
-
-# post '/login' do
-#   @title="Login"
-#   # Code like the following:
-#   # user = @usersTable.where(:name == params[:name]).first
-#   # if user.nil? || not check_password(user, params[:password]) 
-#   user = @usersTable.get(:username => params[:username])
-#   if !user.nil?  
-#     puts user[:username]
-#   end
-#   # if user.nil? || not check_password(user, params[:password])
-#   
-#   # params.each do |k, v|
-#   #   puts "Key: #{k}\nValue: #{v}"
-#   # end
-#   erb :login
-# end
-
 get '/logout/?' do
   session.clear
   redirect '/'
 end
 
-get '/users' do 
+get '/users/?' do 
   user = findUserInDB(session[:id])
-  if user && user[:username] = admin
+  if user && user[:username] = "admin"
     erb :allUsers
   else 
     erb :notLoggedIn

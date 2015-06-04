@@ -67,6 +67,20 @@ form{
 	}
 }
 
+table,{
+	border: 2px solid black;
+}
+
+tr{
+	padding: 10px; 
+	border:2px solid black;
+}
+
+td{
+ padding: 1px;
+ border:2px solid black;
+}
+
 .notice{
 	font-size: 16px;
 	color: $green;

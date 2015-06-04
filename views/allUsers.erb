@@ -1,3 +1,16 @@
+<table>
+	<tr>
+		<td><strong>Username</strong></td>
+  	<td><strong>First Name</strong></td>
+  	<td><strong>Last Name</strong></td>
+  	<td><strong>Email</strong></td>
+  </tr>
  <% @usersTable.each do |k| %>
-    <p><%= k[:username] %></p>
+    <tr>
+    	<td><%= k[:username] %></td>
+    	<td><%= k[:firstName] %></td>
+    	<td><%= k[:lastName] %></td>
+    	<td><%= k[:email] %></td>
+    </tr>
   <% end %>
+</table>
