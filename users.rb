@@ -16,6 +16,18 @@ module LoginHelpers
   def find_user
     Users.get(params[:id])
   end
+  
+  def passwordsMatch?(user, password)
+    if password == user[:password]
+      return true
+    else
+      return false
+    end
+  end
+
+  def findUserInDB(id)
+    @usersTable.get(:id => id)
+  end
   # def setUserInfo(user)
   #   @user.username = user[username]
   #   @user.password = user[password]
@@ -27,10 +39,10 @@ end
 
 helpers LoginHelpers
 
-get '/user/?' do
-  @title="Login"
-  erb :user
-end
+# get '/user/?' do
+#   @title="Login"
+#   erb :user
+# end
 
 get '/register/?' do
   @title = "Register"
@@ -54,9 +66,9 @@ end
 post '/login' do
   @title="Login"
   # Code like the following:
-  # user = @users_table.where(:name == params[:name]).first
+  # user = @usersTable.where(:name == params[:name]).first
   # if user.nil? || not check_password(user, params[:password]) 
-  user = @users_table.get(:username => params[:username])
+  user = @usersTable.get(:username => params[:username])
   if !user.nil?  
     puts user[:username]
   end
@@ -68,8 +80,13 @@ post '/login' do
   erb :login
 end
 
+get '/logout/?' do
+  session.clear
+  redirect '/'
+end
+
 get '/user/:id' do
   @title = Users.get(params[:id]).firstName.capitalize + " " + Users.get(params[:id]).lastName.capitalize + "\'s Account!"
-  @user=find_user
+  @user = find_user
   erb :show_user
 end

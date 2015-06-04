@@ -9,14 +9,14 @@ require './env' if development?
     enable :sessions
 
     def initialize
-      @users_table = Users.all
+      @usersTable = Users.all
     end
     
     # def initialize(app=nil)
     #   super(app)
-    #   # @users_table = DB[:users]
-    #   @users_table = Users.all
-    #   # puts @users_table
+    #   # @usersTable = DB[:users]
+    #   @usersTable = Users.all
+    #   # puts @usersTable
     # end
 
     configure :development do
@@ -35,7 +35,7 @@ require './env' if development?
 
     get '/' do
       @title = "InvestI's Home Page!"
-      # puts @users_table[0][:username]
+      # puts @usersTable[0][:username]
       erb :home
     end
 
