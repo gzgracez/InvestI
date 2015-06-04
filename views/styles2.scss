@@ -4,6 +4,7 @@ $lighterNavy: #0000d3;
 $yellow: #dcdd63;
 $gray: #F8F8F8;
 $green: #1f6300;
+$red: red;
 
 html, body {
 	height: 100%;
@@ -25,6 +26,10 @@ body {
 	a {
 		text-decoration: underline;
 	}
+}
+
+h3 {
+	font-weight: 600;
 }
 
 nav {
@@ -62,9 +67,31 @@ form{
 	}
 }
 
+table,{
+	border: 2px solid black;
+	text-align: center;
+	font-size: 20px;
+}
+
+tr{
+	padding: 10px; 
+	border:2px solid black;
+}
+
+td{
+ padding-left: 10px;
+ padding-right: 10px;
+ border:2px solid black;
+}
+
 .notice{
 	font-size: 16px;
 	color: $green;
+}
+
+.error{
+	font-size: 18px;
+	color: $red;
 }
 
 .bodyText{

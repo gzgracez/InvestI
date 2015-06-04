@@ -29,9 +29,35 @@ helpers do
 	#Get average return
 	def averageReturn(ticker)
 		total=0
-		for i in ticker["data"]
-			total+=i[3].to_f
+		if ticker["data"]
+			for i in ticker["data"]
+				total+=i[3].to_f
+			end
+			return (total/ticker["data"].length).round(2)
+		else 
+			return "No information was found"
 		end
-		return (total/ticker["data"].length).round(2)
 	end
+
+
+	#for Users
+	def find_user
+    Users.get(params[:id])
+  end
+  
+  def passwordsMatch?(user, password)
+    if password == user[:password]
+      return true
+    else
+      return false
+    end
+  end
+
+  def findUserInDB(id)
+  	@usersTable.first(id: id)
+  end
+
+  def create_user 
+    @rUser = Users.create(params[:rUser])
+  end 
 end

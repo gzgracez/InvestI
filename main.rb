@@ -6,8 +6,11 @@ require './users'
 require './env' if development?
 
 #get('/styles.css'){ scss :styles, :syntax => :scss, :style => :compressed }
-
 enable :sessions
+
+def initialize
+  @usersTable = Users.all
+end
 
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
@@ -17,17 +20,48 @@ configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
-get '/api' do
+before do
+  @usersTable = Users.all
+end
+
+get '/api/?' do
   @title="Temp, API, AAPL"
   tickerJSON=findTicker("AAPL")
-  # @average=averageReturn(tickerJSON)
   erb :api
 end
 
 get '/' do
   @title = "InvestI's Home Page!"
-  # @user
-  # @login=false
+  @id = session[:id]
+  user = findUserInDB(session[:id])
+  if user 
+    @firstName = user[:firstName]
+    @lastName = user[:lastName]
+    if user[:username]=="admin"
+      @admin = true
+    else 
+      @admin = false
+    end
+  end
+  erb :home
+end
+
+post '/' do 
+  user = @usersTable.first(username: params[:username])
+  if !user || !passwordsMatch?(user,params[:password])
+    @error = "Email/Password is invalid"
+    erb :home
+  else
+    session[:id] = user[:id]
+    @firstName = user[:firstName]
+    @lastName = user[:lastName]
+    if user[:username] = "admin"
+      @admin = true 
+    else 
+      @admin = false
+    end
+    redirect '/'
+  end
   erb :home
 end
 
@@ -38,7 +72,7 @@ get '/test/?' do
   erb :test
 end
 
-get '/reload' do
+get '/reload/?' do
   @title="InvestI's Reload Page"
   test="reload"
   "Hello #{test}"
@@ -55,10 +89,3 @@ helpers do
     (request.path==path || request.path==path+'/') ? "current" : nil
   end
 end
-
-
-
-#get '/:name' do
-#	name = params[:name]
-#	"Hi there #{name}!"
-#end

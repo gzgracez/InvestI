@@ -1,6 +1,24 @@
-<h1><center>InvestI's Home Page!</center></h1>
+<% if @id.nil? %>
+	<% if @error %>
+		<p class="error"><%= @error %></p>
+	<%end%>
+	<h3>Login:</h3>
+	<form method="post" action="/">
+		<label for="username">Username:</label>
+		<input type="text" name="username" placeholder="Username" ><br><br>
+		<label for="password">Password:</label>
+		<input type="password" name="password" placeholder="Password" ><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	<br>
+	<p>Register <a href="/register" class="href">here</a> for an account if you do not have one already!</p>
+<% else %>
+	<h2>Welcome, <%= @firstName %> <%= @lastName %></h2>
+	<% if @admin %>
+		<p>Click <a href="/users" class="href">here</a> to view all users!</p>
+	<% end %>
+<% end %>
+<p>Click <a href="http://gzgracez.github.io/trinityinvestmentclub/" class="href">here</a> to go to Trinity's Investment Club's Home Page!</p>
 <p>Click <a href="/stocks" class="href">here</a> to view all stocks!</p>
 <p>Click <a href="/stocks/new" class="href">here</a> to add a stock!</p>
-<p>Click <a href="/tasks" class="href">here</a> to view all tasks!</p>
-<p>Click <a href="/tasks/new" class="href">here</a> to create a task!</p>
 <img src="/images/arrowB.svg" width="100%">

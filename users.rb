@@ -12,59 +12,52 @@ end
 
 DataMapper.finalize
 
-module LoginHelpers
-  def find_user
-    Users.get(params[:id])
-  end
-  def setUserInfo(user)
-    @user.username = user[username]
-    @user.password = user[password]
-  end
-  # def   
-  #   @user = Users.create(params[:user])
-  # end 
+# get '/user/?' do
+#   @title="Login"
+#   erb :user
+# end
+
+before do
+  @usersTable = Users.all
 end
 
-helpers LoginHelpers
-
-get '/user/?' do
-  @title="Login"
-  erb :user
-end
-
-get '/user/register' do
+get '/register/?' do
   @title = "Register"
-  @rUser = Users.create(params[:rUser])
+  @rUser = Users.new
+  puts params[:username]
   erb :user_register
 end
 
-get '/login/?' do
-  @title="Login"
-  erb :login
-end
-
-post '/login' do
-  @title="Login"
-  # Code like the following:
-  # user = @users_table.where(:name == params[:name]).first
-  # if user.nil? || not check_password(user, params[:password])
-
-  params.each do |k, v|
-    puts "Key: #{k}\nValue: #{v}"
+post '/register' do
+  # puts params[:rUser][:username]
+  if @usersTable.first(username: params[:rUser][:username]).nil?
+    @rUser = Users.create(params[:rUser])
+    flash[:notice] = "Account created successfully"
+    redirect to("/")
+  else
+    flash[:error] = "Username already taken."
+    redirect to("/register")
+   # if create_user
   end
-  erb :login
-end
-
-post '/user/register' do
-  flash[:notice] = "Account created successfully" if create_user
-  puts @rUser
-  puts @rUser.username
-  redirect to("/login")
   erb :show_user
 end
 
-get '/user/:id' do
-  @title = Users.get(params[:id]).firstName.capitalize + " " + Users.get(params[:id]).lastName.capitalize + "\'s Account!"
-  @user=find_user
-  erb :show_user
+get '/logout/?' do
+  session.clear
+  redirect '/'
 end
+
+get '/users/?' do 
+  user = findUserInDB(session[:id])
+  if user && user[:username] == "admin"
+    erb :allUsers
+  else 
+    erb :notLoggedIn
+  end
+end
+
+# get '/user/:id' do
+#   @title = Users.get(params[:id]).firstName.capitalize + " " + Users.get(params[:id]).lastName.capitalize + "\'s Account!"
+#   @user = find_user
+#   erb :show_user
+# end
