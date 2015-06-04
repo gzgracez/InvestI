@@ -25,8 +25,9 @@ before do
 end
 
 get '/api/?' do
-  @title="Temp, API, AAPL"
-  tickerJSON=findTicker("AAPL")
+  @title = "Temp, API, AAPL"
+  tickerJSON = findTicker("AAPL")
+  @average = averageReturn(tickerJSON)
   erb :api
 end
 
