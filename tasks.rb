@@ -32,7 +32,12 @@ helpers TaskHelpers
 get '/tasks/?' do
   @title="All Tasks"
   find_tasks
-  erb :tasks
+  user = findUserInDB(session[:id])
+  if user
+    erb :tasks
+  else 
+    erb :notLoggedIn
+  end
 end
 
 get '/tasks/new/?' do

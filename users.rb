@@ -52,7 +52,7 @@ get '/users/?' do
   if user && user[:username] == "admin"
     erb :allUsers
   else 
-    erb :notLoggedIn
+    erb :notLoggedInA
   end
 end
 

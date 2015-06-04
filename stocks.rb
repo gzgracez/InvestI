@@ -31,7 +31,12 @@ helpers StockHelpers
 get '/stocks/?' do
   @title="All Stocks"
   find_stocks
-  erb :stocks
+  user = findUserInDB(session[:id])
+  if user
+    erb :stocks
+  else 
+    erb :notLoggedIn
+  end
 end
 
 get '/stocks/new/?' do
