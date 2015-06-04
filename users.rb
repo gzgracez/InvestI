@@ -42,7 +42,7 @@ post '/register' do
   flash[:notice] = "Account created successfully" if create_user
   puts @rUser
   puts @rUser.username
-  # redirect to("/login")
+  redirect to("/login")
   erb :show_user
 end
 
