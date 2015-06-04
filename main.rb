@@ -20,6 +20,10 @@ configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
+before do
+  @usersTable = Users.all
+end
+
 get '/api/?' do
   @title="Temp, API, AAPL"
   tickerJSON=findTicker("AAPL")

@@ -17,6 +17,10 @@ DataMapper.finalize
 #   erb :user
 # end
 
+before do
+  @usersTable = Users.all
+end
+
 get '/register/?' do
   @title = "Register"
   @rUser = Users.new
@@ -45,7 +49,7 @@ end
 
 get '/users/?' do 
   user = findUserInDB(session[:id])
-  if user && user[:username] = "admin"
+  if user && user[:username] == "admin"
     erb :allUsers
   else 
     erb :notLoggedIn
