@@ -31,11 +31,8 @@ get '/' do
   @id = session[:id]
   user = findUserInDB(session[:id])
   if user 
-    puts "YES USER"
     @firstName = user[:firstName]
     @lastName = user[:lastName]
-    puts @firstName
-    puts @lastName
     if user[:username]=="admin"
       @admin = true
     else 
@@ -54,8 +51,6 @@ post '/' do
     session[:id] = user[:id]
     @firstName = user[:firstName]
     @lastName = user[:lastName]
-    # puts @firstName
-    # puts @lastName
     if user[:username] = "admin"
       @admin = true 
     else 

@@ -20,11 +20,13 @@ DataMapper.finalize
 get '/register/?' do
   @title = "Register"
   @rUser = Users.new
+  puts params[:username]
   erb :user_register
 end
 
 post '/register' do
-  if @usersTable.first(username: params[:username]).nil?
+  # puts params[:rUser][:username]
+  if @usersTable.first(username: params[:rUser][:username]).nil?
     @rUser = Users.create(params[:rUser])
     flash[:notice] = "Account created successfully"
     redirect to("/")
