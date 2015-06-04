@@ -14,6 +14,9 @@
 	<p>Register <a href="/register" class="href">here</a> for an account if you do not have one already!</p>
 <% else %>
 	<h2>Welcome, <%= @firstName %> <%= @lastName %></h2>
+	<% if @admin %>
+		<p>Click <a href="/users" class="href">here</a> to view all users!</p>
+	<% end %>
 <% end %>
 <p>Click <a href="http://gzgracez.github.io/trinityinvestmentclub/" class="href">here</a> to go to Trinity's Investment Club's Home Page!</p>
 <p>Click <a href="/stocks" class="href">here</a> to view all stocks!</p>
