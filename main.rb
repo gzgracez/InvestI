@@ -65,6 +65,27 @@ post '/' do
   erb :home
 end
 
+# get '/users/:id/edit/?' do
+#   @title = "Edit " + Users.get(params[:id]).username
+#   @tasks=Tasks.get(params[:id])
+#   erb :edit_task
+# end
+
+# put '/users/:id' do
+#   @title = "Update " + Users.get(params[:id]).name
+#   tasks=find_task
+#   if tasks.update(params[:tasks])
+#     flash[:notice] = "Task successfully updated"
+#   end
+#   redirect to("/tasks/#{tasks.id}")
+# end
+
+# delete '/users/:id' do
+#   @title = "Delete " + Users.get(params[:id]).name
+#   find_task.destroy
+#   redirect to("/tasks")
+# end
+
 get '/test/?' do
   @title="InvestI's Test Page"
   test="test"
